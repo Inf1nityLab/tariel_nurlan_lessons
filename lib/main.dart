@@ -1,26 +1,43 @@
+
+import 'package:device_preview/device_preview.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:tar_nur_lessons/lesson_01/screens/login_screen.dart';
-import 'package:tar_nur_lessons/lesson_02/screens/main_screen_02.dart';
+import 'package:tar_nur_lessons/lesson_06/grid_screen.dart';
+import 'package:tar_nur_lessons/lesson_06/instagram_post_screen.dart';
+import 'package:tar_nur_lessons/lesson_06/map_screen.dart';
+
 
 void main() {
-  runApp(const MyApp());
+
+  runApp(
+    DevicePreview(
+      enabled: !kReleaseMode,
+      builder: (context) => const MyApp(), // Wrap your app
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      useInheritedMediaQuery: true,
+      locale: DevicePreview.locale(context),
+      builder: DevicePreview.appBuilder,
       theme: ThemeData(
-
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MainScreen02(),
+      darkTheme: ThemeData.dark(),
+      home: const GridScreen(
+      ),
     );
   }
 }
+
+
+
+
 

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:tar_nur_lessons/lesson_02/screens/detail_screen_02.dart';
+import 'package:tar_nur_lessons/lesson_02/service.dart';
 import 'package:tar_nur_lessons/lesson_02/widgets/icon_button_widget.dart';
 import '../constants/colors.dart';
 import '../widgets/containerWidget.dart';
@@ -14,7 +16,7 @@ class MainScreen02 extends StatelessWidget {
         padding: const EdgeInsets.all(15),
         child: Column(
           children: [
-            bigContainer(),
+            bigContainer(context),
             const SizedBox(
               height: 25,
             ),
@@ -40,7 +42,7 @@ class MainScreen02 extends StatelessWidget {
     );
   }
 
-  Widget bigContainer() {
+  Widget bigContainer(BuildContext context) {
     return Container(
       height: 350,
       width: double.infinity,
@@ -53,7 +55,7 @@ class MainScreen02 extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               iconButtonWidget(Icons.menu, () {}),
-              iconButtonWidget(Icons.more_vert, () {}),
+              iconButtonWidget(Icons.more_vert, () {navigation(context, DetailScreen03());}),
             ],
           ),
           const CircleAvatar(

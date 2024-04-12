@@ -1,9 +1,10 @@
-
 import 'package:flutter/material.dart';
 import 'package:tar_nur_lessons/lesson_01/constants/colors.dart';
 
-Widget textFieldWidget(String text, IconData iconData, IconData? eyes, bool show){
-  return  TextField(
+Widget textFieldWidget(String text, IconData iconData, IconData? eyes,
+    bool show, TextEditingController controller) {
+  return TextField(
+    controller: controller,
     obscureText: show,
     decoration: InputDecoration(
         filled: true,
@@ -12,10 +13,10 @@ Widget textFieldWidget(String text, IconData iconData, IconData? eyes, bool show
           borderRadius: BorderRadius.circular(40),
           borderSide: BorderSide.none,
         ),
-        contentPadding:  const EdgeInsets.symmetric(horizontal: 20, vertical: 40),
+        contentPadding:
+            const EdgeInsets.symmetric(horizontal: 20, vertical: 40),
         labelText: text,
         prefixIcon: Icon(iconData),
-        suffixIcon: IconButton(onPressed: (){}, icon:  Icon(eyes))
-    ),
+        suffixIcon: IconButton(onPressed: () {}, icon: Icon(eyes))),
   );
 }

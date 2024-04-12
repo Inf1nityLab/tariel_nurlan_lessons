@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:tar_nur_lessons/lesson_01/constants/colors.dart';
 
-Widget elevatedButtonWidget(String text) {
+Widget elevatedButtonWidget(String text, Function() onPressed) {
   return SizedBox(
     width: double.infinity,
     height: 70,
     child: ElevatedButton(
-      onPressed: () {},
+      onPressed: onPressed,
       style: ElevatedButton.styleFrom(backgroundColor: indigo),
       child:  Text(
         text,
