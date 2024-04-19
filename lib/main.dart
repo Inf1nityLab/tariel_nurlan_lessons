@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:tar_nur_lessons/lesson_06/grid_screen.dart';
 import 'package:tar_nur_lessons/lesson_06/instagram_post_screen.dart';
 import 'package:tar_nur_lessons/lesson_06/map_screen.dart';
+import 'package:tar_nur_lessons/lesson_07/tik_tok_screen.dart';
 
 
 void main() {
@@ -31,8 +32,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       darkTheme: ThemeData.dark(),
-      home: const GridScreen(
-      ),
+      home: const TikTokScreen(),
     );
   }
 }
